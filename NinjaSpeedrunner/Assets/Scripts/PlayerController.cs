@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float gracePeriod;
 
-
+    
+    public int life = 3;
 
     private float ySpeed;
     // ? means its nullable, so it can have null value
@@ -41,6 +42,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Para que se muera
+        if (life <= 0)
+        {
+            _charCtrl.enabled = false;
+        }
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
@@ -139,6 +146,8 @@ public class PlayerController : MonoBehaviour
 
             _charCtrl.Move(velocity * Time.deltaTime);
         }
+
+
     }
 
     public void JumpPad()
@@ -155,6 +164,15 @@ public class PlayerController : MonoBehaviour
             velocity.y = ySpeed * Time.deltaTime;
 
             _charCtrl.Move(velocity);
+        }
+    }
+
+    //Para que baje la vida con los balazos
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Bullet"))
+        {
+            life--;
         }
     }
 }
