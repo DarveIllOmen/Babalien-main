@@ -45,7 +45,10 @@ public class PlayerController : MonoBehaviour
         //Para que se muera
         if (life <= 0)
         {
-            _charCtrl.enabled = false;
+            //No vamos a poner esto todavia para acer testing
+            //_charCtrl.enabled = false;
+
+            Debug.Log("You are dead");
         }
 
         float horizontalInput = Input.GetAxis("Horizontal");
