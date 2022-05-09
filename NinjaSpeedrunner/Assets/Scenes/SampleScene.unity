@@ -1343,10 +1343,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1902016269, guid: 2d2d494e85f9d5f4489cfcd4dade043d, type: 3}
-      propertyPath: jumpPadStrength
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 6988308469181674080, guid: 2d2d494e85f9d5f4489cfcd4dade043d, type: 3}
       propertyPath: m_Name
       value: Ninja
