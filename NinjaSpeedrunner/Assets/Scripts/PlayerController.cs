@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         _animCtrl = GetComponent<Animator>();
         stepOffset = _charCtrl.stepOffset;
 
-        life = GameObject.Find("valuekeeper").GetComponent<savevalues>().healthkept;
+        life = GameObject.Find("value keeper").GetComponent<savevalues>().healthkept;
         
     }
 
