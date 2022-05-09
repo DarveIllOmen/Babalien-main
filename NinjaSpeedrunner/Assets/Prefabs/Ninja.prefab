@@ -32,8 +32,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airSpeed: 10
   jumpsSpeed: 10
+  jumpPadStrength: 25
   gravity: -25
   gracePeriod: 0.15
+  life: 3
 --- !u!1001 &7798576864907251505
 PrefabInstance:
   m_ObjectHideFlags: 0
