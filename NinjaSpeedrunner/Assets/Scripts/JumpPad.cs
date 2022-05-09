@@ -9,7 +9,6 @@ public class JumpPad : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerController>().JumpPad();
-            Debug.Log("detected");
         }
     }
 }
