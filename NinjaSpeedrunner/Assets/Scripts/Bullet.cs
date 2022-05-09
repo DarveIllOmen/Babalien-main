@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     private float speed;
-
+    private float timer = 7f;
     private void Start()
     {
         GameObject ninja = GameObject.Find("Ninja");
@@ -16,6 +16,13 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+        timer = timer - Time.deltaTime;
+
+        if (timer <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
         transform.position += transform.forward * speed * Time.deltaTime;
     }
 

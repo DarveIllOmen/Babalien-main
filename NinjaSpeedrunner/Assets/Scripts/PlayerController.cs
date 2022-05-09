@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
         _charCtrl = GetComponent<CharacterController>();
         _animCtrl = GetComponent<Animator>();
         stepOffset = _charCtrl.stepOffset;
+
+        life = GameObject.Find("valuekeeper").GetComponent<savevalues>().healthkept;
+        
     }
 
     private void Update()

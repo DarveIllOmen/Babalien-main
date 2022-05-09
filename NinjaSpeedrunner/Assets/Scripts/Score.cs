@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        
+        currentscore = GameObject.Find("value keeper").GetComponent<savevalues>().scorekept;
     }
 
     
