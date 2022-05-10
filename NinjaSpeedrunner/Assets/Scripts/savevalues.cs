@@ -7,6 +7,10 @@ public class savevalues : MonoBehaviour
 {
     public int healthkept = 10;
     public int scorekept = 0;
+
+    public bool armourgot;
+    public bool doublejumpgot;
+    public bool lifegot;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +21,10 @@ public class savevalues : MonoBehaviour
     void Update()
     {
         healthkept = GameObject.Find("Ninja").GetComponent<PlayerController>().life;
-        scorekept = GameObject.Find("Score").GetComponent<Score>().currentscore;        
+        scorekept = GameObject.Find("Score").GetComponent<Score>().currentscore;
+
+        armourgot = GameObject.Find("Store").GetComponent<Store>().armourbought;
+        doublejumpgot = GameObject.Find("Store").GetComponent<Store>().doublejumpbought;
+        lifegot = GameObject.Find("Store").GetComponent<Store>().lifebought;
     }   
 }
