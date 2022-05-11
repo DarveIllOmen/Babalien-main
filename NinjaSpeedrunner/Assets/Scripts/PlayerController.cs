@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float jumpsSpeed;
     [SerializeField]
     private float jumpPadStrength;
+    [SerializeField]
+    private float rotationSpeed;
 
     [SerializeField]
     private float gravity;
@@ -31,12 +33,15 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController _charCtrl;
     private Animator _animCtrl;
+    private GameObject _cam;
+
 
 
     private void Start()
     {
         _charCtrl = GetComponent<CharacterController>();
         _animCtrl = GetComponent<Animator>();
+        _cam = GameObject.Find("Main Camera");
         stepOffset = _charCtrl.stepOffset;
     }
 
@@ -62,7 +67,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //direction of the movement
-        Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
+        Vector3 direction = transform.forward * verticalInput + transform.right * horizontalInput;
         if (direction.magnitude > 1)
         {
             direction.Normalize();
@@ -150,6 +155,9 @@ public class PlayerController : MonoBehaviour
             _charCtrl.Move(velocity * Time.deltaTime);
         }
 
+        Vector3 lookRotation = _cam.transform.forward;
+        lookRotation.y = 0;
+        transform.rotation = Quaternion.LookRotation(lookRotation);
 
     }
 
